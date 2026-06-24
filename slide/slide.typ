@@ -1013,7 +1013,7 @@
     #image("img/fibonacci_tasks_animation.gif", width: 80%)
   ]
 
-  - #link("img/fibonacci_tasks_animation.gif")[GIFへのリンク]
+  - #link("https://github.com/yukim0359/OpenMP-tutorial/blob/main/slide/img/fibonacci_tasks_animation.gif")[GIFへのリンク]
 ]
 
 // #slide(title: [`fib.c` の実行])[
