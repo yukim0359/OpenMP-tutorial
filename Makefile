@@ -1,18 +1,29 @@
-CC := gcc-15
+CC := gcc
 CFLAGS := -Wall -Wextra -fopenmp
 
-TUTORIAL_DIRS := 01_tutorial 02_syntax 03_scheduling 04_task 05_attribution 06_thread 07_appendix
+BUILD_DIRS := \
+	01_openmp \
+	02_loop \
+	03_correct_parallel/shared_private \
+	03_correct_parallel/data_race \
+	04_fast_parallel/scheduling \
+	04_fast_parallel/threads \
+	05_other_syntax \
+	05_other_syntax/task \
+	06_appendix/simd \
+	06_appendix/examples \
+	06_appendix/implementation
 
-.PHONY: all $(TUTORIAL_DIRS)
-all: $(TUTORIAL_DIRS)
+.PHONY: all clean $(BUILD_DIRS)
 
-$(TUTORIAL_DIRS):
+all: $(BUILD_DIRS)
+
+$(BUILD_DIRS):
 	@echo "Building $@..."
 	@$(MAKE) -C $@ CC="$(CC)" CFLAGS="$(CFLAGS)"
 
-.PHONY: clean
 clean:
-	@for dir in $(TUTORIAL_DIRS); do \
+	@for dir in $(BUILD_DIRS); do \
 		echo "Cleaning $$dir..."; \
 		$(MAKE) -C $$dir clean; \
 	done

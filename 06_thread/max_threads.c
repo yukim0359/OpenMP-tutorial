@@ -1,6 +1,0 @@
-#include <stdio.h>
-#include <omp.h>
-
-int main() {
-    printf("Max threads = %d\n", omp_get_max_threads());
-}

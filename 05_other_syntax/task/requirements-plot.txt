@@ -1,0 +1,4 @@
+matplotlib>=3.8
+pydot>=2.0
+imageio>=2.34
+Pillow>=10.0
